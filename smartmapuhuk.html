@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Map Fish</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+        <div class="layar-dalam">
+          <div class="logo">
+            <a href=""><img src="2.png" class="putih" /></a>
+            <a href=""><img src="SMARTMAP.png" class="putih" /></a>
+          </div>
+          <div class="menu">
+            <a href="#" class="tombol-menu">
+              <span class="garis"></span>
+              <span class="garis"></span>
+              <span class="garis"></span>
+            </a>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#aboutus">About Us</a></li>
+              <li><a href="#support">Fun Fact</a></li>
+              <li><a href="#gallery">SmartMap</a></li>
+              <li><a href="#team">Team</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="layar-penuh">
+        <header id="home">
+          <div class="overlay"></div>
+          <video autoplay muted loop>
+          <source src="video/video.mp4"type="video/mp4"/>
+          </video>
+          <div class="intro">
+            <h3>SMARTMAP FISH</h3>
+            <p></p>
+            <p>
+              Aplikasi Pemetaan Zona Penangkapan Ikan Pelagis di Laut Banda Berbasis Website
+            </p>
+            <p>
+              <a href="" class="tombol">MORE INFO</a>
+            </p>
+          </div>
+        </header>
+        <main>
+          <section id="aboutus">
+            <div class="layar-dalam">
+              <h3>About Us</h3>
+              <p class="ringkasan">
+                Smart Map Fish
+              </p>
+              <div class="konten-isi">
+                <p>
+                    Smart Map Fish merupakan aplikasi yang berfungsi sebagai alat untuk memetakan wilayah penangkapan ikan pelagis. Yang dimaksud dengan
+                     aplikasi ini mencakup kemampuan untuk memberikan informasi yang tepat waktu dan akurat mengenai lokasi-lokasi strategis di wilayah laut,
+                     sehingga memungkinkan nelayan untuk mengidentifikasi dan memilih daerah penangkapan ikan yang paling potensial. 
+                     Smart Map Fish membantu Anda meningkatkan efisiensi penangkapan ikan, mengoptimalkan waktu, 
+                     dan mengelola sumber daya perikanan secara berkelanjutan dengan menggunakan teknologi pemetaan dan pemantauan.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="abuabu" id="support">
+            <div class="layar-dalam support">
+              <div>
+                <br>
+                <br>
+                <img src="marlin.png" />
+                <h6>Ikan Pelagis Besar</h6>
+                <p>
+                  Jenis kedua adalah ikan pelagis besar. 
+                  Ikan pelagis besar hidup di lautan lepas dengan kondisi lingkungan yang masih stabil. 
+                  Selain itu, ikan pelagis besar biasanya melakukan migrasi dalam dalam jangka waktu yang 
+                  jauh sepanjang tahun.
+                </p>
+              </div>
+              <div>
+                <img src="pelagis.jpg" />
+                <h6>PELAGIC FISH</h6>
+                <p>
+                  Ikan pelagis laut dibedakan menjadi ikan pesisir (inshore) dan ikan samudera (offshore).
+                  Pelagis pesisir menghuni perairan yang relatif dangkal dan terang.
+                  Sedangkan ikan pelagis samudera menghuni perairan yang luas dan dalam di luar landas continent.
+                </p>
+              </div>
+              <div>
+                <br>
+                <br>
+                <br>
+                <img src="cakalang.png" />
+                <h6>Ikan Pelagis Kecil</h6>
+                <p>
+                  Ikan pelagis kecil adalah ikan yang hidup di sekitar permukaan perairan.
+                  Ikan pelagis kecil lebih ditangkap oleh para nelayan Indonesia dengan tujuan untuk dikonsumsi dan dijual. 
+                  Ikan ini tergolong sangat merakyat dan harganya pun mudah dijangkau di pasaran.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section id="gallery">
+            <div><img src="ikan 1.png" /></div>
+            <div><img src="ikan 2.png" /></div>
+            <div><img src="ikan 3.png" /></div>
+            <div><img src="ikan 4.png" /></div>
+            <div><img src="ikan 5.png" /></div>
+            <div><img src="ikan 6.png" /></div>
+            <div><img src="ikan 7.png" /></div>
+          </section>
+          <!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartMap Fish</title>
+    <style>
+        body {
+            background-color: #ffffff; /* untuk menambahkan warna background */
+            text-align: center; /* membuat teks berada di tengah */
+        }
+    </style>
+</head>
+<body>
+    <h1>SMARTMAP FISH LAUT BANDA</h1>
+    <p>Masukkan titik koordinat tempat tujuan menggunakan Desimal Degree untuk mendeteksi keberadaan Jenis Ikan Pelagis</p>
+    <form id="form-coordinate">
+        <label for="longitude">Longitude :</label>
+        <input type="number" id="longitude" name="longitude" step="0.000001" required>
+        <br>
+        <P></P>
+        <label for="latitude">Latitude  : </label>
+        <input type="number" id="latitude" name="latitude" step="0.000001" required>
+        <br>
+        <P></P>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        const form = document.getElementById('form-coordinate');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const longitude = parseFloat(event.target.longitude.value);
+            const latitude = parseFloat(event.target.latitude.value);
+
+            const isInArea = longitude >= 126.7 && longitude <= 130.3 && latitude >= 2.6 && latitude <= 4;
+
+            if (isInArea) {
+                result.textContent = 'Terdapat jenis ikan pelagis';
+            } else {
+                result.textContent = 'Tidak terdapat ikan pelagis. Silakan masukkan kembali titik koordinat lokasi fishing ground tujuan';
+            }
+        });
+    </script>
+</body>
+</html>
+          <section class="quote">
+            <div class="layar-dalam">
+              <p>Peta Zona Ikan Pelagis Laut Banda</p>
+            </div>
+          </section>
+          <section id="team">
+            <div class="layar-dalam">
+              <h3>Our Team</h3>
+              <p class="ringkasan">
+                "Kami Berterima kasih kepada semua pihak konstributor atas dedikasi luar biasa
+                 dalam menyelesaikan tugas Ujian Akhir Semester ini, menciptakan fondasi keberhasilan, 
+                 dan membangun prestasi yang membanggakan. Hormat dan apresiasi kami untuk semua yang 
+                 terlibat di dalam dan di luar tim."
+              </p>
+              <div class="tim">
+                <div>
+                  <img src="fototim/angga.jpeg" />
+                  <h6>Angga Ardiansyah</h6>
+                  <p>SIK 1A (2307300)</p>
+                  <span>Mahasiswa Semester 1 Program Studi Sistem Informasi Kelautan Universitas Pendidikan Indonesia</span>
+                </div>
+                <div>
+                  <img src="fototim/nelita.jpeg" />
+                  <h6>Nelita Maharani</h6>
+                  <p>SIK 1A (2307052)</p>
+                  <span>Mahasiswa Semester 1 Program Studi Sistem Informasi Kelautan Universitas Pendidikan Indonesia</span>
+                </div>
+                <div>
+                  <img src="fototim/fines.jpeg" />
+                  <h6>Finesia Nurul Adha</h6>
+                  <p>SIK 1B (2305877)</p>
+                  <span>Mahasiswa Semester 1 Program Studi Sistem Informasi Kelautan Universitas Pendidikan Indonesia</span>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="abuabu" id="blog">
+            <div class="layar-dalam">
+              <h3>Lastest Blog</h3>
+              <p class="ringkasan">
+                More Info About SmartMap Fish
+              </p>
+              <div class="blog">
+                <div class="area">
+                  <div
+                    class="gambar"
+                    style="background-image: url('SMARTMAP.png')"
+                  ></div>
+                  <div class="text">
+                    <article>
+                      <h4><a href="#">Apa Tujuan SmartMap Fish di Buat?</a></h4>
+                      <p>
+                      Smart Map Fish bertujuan untuk membantu nelayan dalam mengoptimalkan 
+                      waktu penangkapan dengan memilih zona yang paling potensial pada area yang strategis. 
+                      </p>
+                    </article>
+                  </div>
+                </div>
+                <div class="area">
+                  <div
+                    class="gambar"
+                    style="background-image: url('hook.jpeg')"
+                  ></div>
+                  <div class="text">
+                    <article>
+                      <h4><a href="#">Apa Keuntungannya Untuk Nelayan?</a></h4>
+                      <p>
+                        Smart Map Fish membantu Anda meningkatkan efisiensi penangkapan ikan, 
+                        mengoptimalkan waktu, dan mengelola sumber daya perikanan secara berkelanjutan 
+                        dengan menggunakan teknologi pemetaan dan pemantauan.
+                      </p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <footer id="contact">
+          <div class="layar-dalam">
+            <div>
+              <h5>E-mail</h5>
+              anggardi7@upi.edu
+              <p>nelitamaharani05@upi.edu</p>
+              <p>finesianuruladha@upi.edu</p>
+            </div>
+            <div>
+              <h5>Contact</h5>
+              +62 8389608054
+              <p>+62 83844141966</p>
+              <p>+62 85591416469</p>
+            </div>
+            <div>
+              <h5>Instagram</h5>
+              @anggardii
+              <p>@nelitaverse</p>
+              <p>@fnsaadh_</p>
+            </div>
+            <div>
+              <h5>Alamat</h5>
+              Kota Serang, Serang, Banten
+            </div>
+          </div>
+          <div class="layar-dalam">
+            <div class="copyright">&copy; 2023 SmartMap Fish</div>
+          </div>
+        </footer>
+      </div>
+      <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"
+      ></script>
+      <script src="javascript.js"></script>
+    </body>
+  </html>
